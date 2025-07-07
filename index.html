@@ -1,14 +1,4 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>s.h/gh/test2</title>
-  
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
@@ -533,6 +523,7 @@
     
     <!-- صفحه ورود -->
     <div id="loginPage" class="card fade-in">
+        <img src="https://j3rajerz.github.io/s.gh.tst2/GR-logo.png" alt="لوگوی سامانه" width="100" style="display:block; margin: 0 auto 10px;">
       <h2 style="text-align: center; color: var(--secondary-color);">سامانه  درخواست ماموریت JR</h2>
       <div class="login-options">
         <button class="btn btn-primary" onclick="showLoginForm('admin')">
@@ -691,7 +682,7 @@
   </div>
 
   <div class="form-group">
-    <img id="adminProfileImage" src="assets/GR-logo.png" alt="پروفایل مدیر" width="100" style="border-radius: 8px; margin-top: 10px;">
+    <img id="adminProfileImage" src="GR-logo.png" alt="پروفایل مدیر" width="100" style="border-radius: 8px; margin-top: 10px;">
   </div>
 
   <button class="btn btn-success" onclick="updateAdminProfile()">
@@ -1049,24 +1040,23 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-  
-  <script>    
-    // پخش صوت
-    function playSound(soundName) {
-      const sounds = {
-        M1: 'https://raw.githubusercontent.com/yourusername/GR-Attendance-System/main/sounds/M1.mp3',
-        M2: 'https://raw.githubusercontent.com/yourusername/GR-Attendance-System/main/sounds/M2.mp3',
-        M3: 'https://raw.githubusercontent.com/yourusername/GR-Attendance-System/main/sounds/M3.mp3',
-        M4: 'https://raw.githubusercontent.com/yourusername/GR-Attendance-System/main/sounds/M4.mp3',
-        M5: 'https://raw.githubusercontent.com/yourusername/GR-Attendance-System/main/sounds/M5.mp3'
-      };
-      
-      if (sounds[soundName]) {
-        const audio = new Audio(sounds[soundName]);
-        audio.play().catch(e => console.log('خطا در پخش صوت:', e));
-      }
+  <script>
+  function playSound(soundName) {
+    const sounds = {
+      M1: 'https://j3rajerz.github.io/s.gh.tst2/M1.mp3',
+      M2: 'https://j3rajerz.github.io/s.gh.tst2/M2.mp3',
+      M3: 'https://j3rajerz.github.io/s.gh.tst2/M3.mp3',
+      M4: 'https://j3rajerz.github.io/s.gh.tst2/M4.mp3',
+      M5: 'https://j3rajerz.github.io/s.gh.tst2/M5.mp3'
+    };
+
+    if (sounds[soundName]) {
+      const audio = new Audio(sounds[soundName]);
+      audio.play().catch(e => console.log('خطا در پخش صوت:', e));
     }
-    
+  }
+</script>
+  <script>  
     // نمایش راهنما
     function showHelp() {
       Swal.fire({
@@ -2282,14 +2272,13 @@ let currentUser = null;
 let currentRole = null;
 
 loadDataFromJSONBin().then(data => {
-  if (data) {
-    employees         = data.employees         || [];
-    missionRequests   = data.missionRequests   || [];
-    leaveRequests     = data.leaveRequests     || [];
-    transportManager  = data.transportManager  || null;
-    adminPassword     = data.adminPassword     || '1335';
-    adminProfile      = data.adminProfile      || { name: 'عباس', photo: '...' };
-  }
+  if (!data) data = {}; // ← fallback
+
+  employees         = data.employees         || [];
+  missionRequests   = data.missionRequests   || [];
+  leaveRequests     = data.leaveRequests     || [];
+  adminPassword     = data.adminPassword     || '1335';
+  adminProfile      = data.adminProfile      || { name: 'عباس', photo: 'GR-logo.png' };
 });
 
 // 📤 ذخیره داده‌ها در JSONBin
@@ -2403,9 +2392,5 @@ function loadEmployees() {
   }
 
 </script>
-</body>
-</html>
-<!-- partial -->
-  
 </body>
 </html>
