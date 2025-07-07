@@ -620,7 +620,7 @@
 </div>
 
 <div class="form-group">
-  <img id="employeePhotoPreview" src="assets/avatar.png" alt="پیش‌نمایش تصویر کارمند" width="80" style="border-radius: 6px; margin-top: 10px;">
+  <img id="employeePhotoPreview" img src="https://j3rajerz.github.io/s.gh.tst2/avatar.png" alt="پیش‌نمایش تصویر کارمند" width="80" style="border-radius: 6px; margin-top: 10px;">
 </div>
         <button class="btn btn-success" onclick="registerEmployee()">
           <i class="fas fa-save"></i> ثبت کارمند
@@ -1323,7 +1323,7 @@
 
   // عکس پیش‌فرض اگر تصویری انتخاب نشده باشد
   if (!newEmployee.photo) {
-    newEmployee.photo = "assets/avatar.png";
+    newEmployee.photo = "https://j3rajerz.github.io/s.gh.tst2/avatar.png";
   }
 
   newEmployee.lastName = lastName;
@@ -1347,7 +1347,7 @@
   document.getElementById('employeePhotoInput').value = '';
   const preview = document.getElementById('employeePhotoPreview');
   if (preview) {
-    preview.src = "assets/avatar.png";
+    preview.src = "https://j3rajerz.github.io/s.gh.tst2/avatar.png";
   }
   newEmployee = {};
 }
@@ -2375,7 +2375,7 @@ function loadEmployees() {
       const card = document.createElement('div');
       card.className = 'card';
 
-      const imgSrc = emp.photo || 'assets/avatar.png';
+      const imgSrc = emp.photo || 'https://j3rajerz.github.io/s.gh.tst2/avatar.png';
 
       card.innerHTML = `
         <div class="profile-header" style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
